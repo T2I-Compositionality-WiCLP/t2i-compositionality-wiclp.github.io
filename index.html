@@ -7,7 +7,7 @@
     <!-- Replace the content tag with appropriate information -->
     <!-- <meta name="description" content="DESCRIPTION META TAG"> -->
 
-    <meta property='og:title' content='Mitigating Compositional Issues in Text-to-Image Generative Models via Enhanced Text Embeddings. arXiv 2024.'/>
+    <meta property='og:title' content='Improving Compositional Attribute Binding in Text-to-Image Generative Models via Enhanced Text Embeddings. arXiv 2024.'/>
     <meta property='og:url' content='https://github.com/ArmanZarei/Mitigating-T2I-Comp-Issues'/>
     <meta property="og:image" content="static/images/banner.png" />
     <meta property="og:image:width" content="1200" />
@@ -22,7 +22,7 @@
     <!-- <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Mitigating Compositional Issues in Text-to-Image Generative Models via Enhanced Text Embeddings</title>
+    <title>Improving Compositional Attribute Binding in Text-to-Image Generative Models via Enhanced Text Embeddings</title>
 
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
     rel="stylesheet">
@@ -54,7 +54,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">Mitigating Compositional Issues in Text-to-Image Generative Models via Enhanced Text Embeddings</h1>
+          <h1 class="title is-2 publication-title">Improving Compositional Attribute Binding in Text-to-Image Generative Models via Enhanced Text Embeddings</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://armanzarei.github.io/">Arman Zarei</a><sup>*</sup>,</span>
@@ -148,14 +148,10 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Text-to-image diffusion-based generative models have the stunning ability to generate photo-realistic images and achieve state-of-the-art low FID scores on challenging image generation benchmarks.
+            Text-to-image diffusion-based generative models have the stunning ability to generate photo-realistic images and achieve state-of-the-art low FID scores on challenging image generation benchmarks. 
             However, one of the primary failure modes of these text-to-image generative models is in composing attributes, objects, and their associated relationships accurately into an image.
-            In our paper, we investigate this compositionality-based failure mode and highlight that imperfect text conditioning with CLIP text-encoder is one of the primary reasons behind the inability of these models to generate high-fidelity compositional scenes.
-            In particular, we show that (i) there exists an optimal text-embedding space that can generate highly coherent compositional scenes showing that the output space of the CLIP text-encoder is sub-optimal,
-            and (ii) the final token embeddings in CLIP are erroneous as they often include attention contributions from unrelated tokens in compositional prompts.
-            Our main finding shows that the best compositional improvements can be achieved (without harming the model's FID score) by fine-tuning <i>it only</i> a simple and parameter-efficient linear projection on CLIP's representation space in Stable-Diffusion variants using a small set of compositional image-text pairs.
-            This result demonstrates that the sub-optimality of the CLIP's output space is a major error source.
-            We also show that re-weighting the erroneous attention contributions in CLIP can lead to slightly improved compositional performances.
+            In our paper, we investigate compositional attribute binding failures, where the model fails to correctly associate descriptive attributes (such as color, shape, or texture) with the corresponding objects in the generated images, and highlight that imperfect text conditioning with CLIP text-encoder is one of the primary reasons behind the inability of these models to generate high-fidelity compositional scenes.
+            In particular, we show that (i) there exists an optimal text-embedding space that can generate highly coherent compositional scenes showing that the output space of the CLIP text-encoder is sub-optimal, and (ii) the final token embeddings in CLIP are erroneous as they often include attention contributions from unrelated tokens in compositional prompts. Our main finding shows that significant compositional improvements can be achieved (without harming the model's FID score) by fine-tuning <i>only</i> a simple and parameter-efficient linear projection on CLIP's representation space in Stable-Diffusion variants using a small set of compositional image-text pairs.
           </p>
         </div>
       </div>
@@ -194,6 +190,12 @@
         <!-- Prompt Interpolation image -->
         <h3 class="title is-4">(i) <tt>WiCLP</tt> improves Compositionality!</h3>
         
+        
+        <div class="content has-text-centered">
+          <img src="./static/images/prompt_visualizations/all_models.png" width="100%">
+        </div>
+        <br>
+
         <div class="container is-max-desktop has-text-centered">
           <div id="results-carousel" class="carousel results-carousel">
             <div class="item item-t2i1">
@@ -445,7 +447,7 @@
         <h3 class="title is-4">Source (ii): Sub-Optimality of CLIP Text-Encoder</h3>
         
         <div class="content has-text-centered">
-            <img src="./static/images/opt_text_embedding/opt_text_embedding.png" width="80%">
+            <img src="./static/images/opt_text_embedding/opt_text_embedding2.png" width="50%">
         </div>
         <div class="content has-text-justified">
           <p>
@@ -463,7 +465,7 @@
         <h3 class="title is-4"><tt>WiCLP</tt> Achieves Superior Compositional Performance on Stable Diffusion Models in T2I-CompBench!</h3>
         
         <div class="content has-text-centered">
-            <img src="./static/images/experiments/results.png" width="90%">
+            <img src="./static/images/experiments/results.png" width="420px">
         </div>
         <div class="content has-text-justified">
           <p>
@@ -514,11 +516,14 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title"><a id="bibtex">BibTeX</a></h2>
-    <pre><code>@article{zarei2024understanding,
-      title={Understanding and Mitigating Compositional Issues in Text-to-Image Generative Models},
-      author={Zarei, Arman and Rezaei, Keivan and Basu, Samyadeep and Saberi, Mehrdad and Moayeri, Mazda and Kattakinda, Priyatham and Feizi, Soheil},
-      journal={arXiv preprint arXiv:2406.07844},
-      year={2024}
+    <pre><code>@misc{zarei2025improvingcompositionalattributebinding,
+      title={Improving Compositional Attribute Binding in Text-to-Image Generative Models via Enhanced Text Embeddings}, 
+      author={Arman Zarei and Keivan Rezaei and Samyadeep Basu and Mehrdad Saberi and Mazda Moayeri and Priyatham Kattakinda and Soheil Feizi},
+      year={2025},
+      eprint={2406.07844},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2406.07844}, 
 }</code></pre>
   </div>
 </section>
